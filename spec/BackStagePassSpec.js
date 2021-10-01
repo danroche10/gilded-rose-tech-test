@@ -37,5 +37,17 @@ fdescribe('BackStagePass', function () {
         })
       );
     });
+
+    it('quality is zero afte the concert', function () {
+      backStagePass = new BackStagePass('BackStagePass', 0, 5);
+
+      expect(backStagePass.updateItem()).toEqual(
+        jasmine.objectContaining({
+          name: 'BackStagePass',
+          sellIn: -1,
+          quality: 0,
+        })
+      );
+    });
   });
 });

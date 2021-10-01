@@ -8,6 +8,8 @@ class BackStagePass extends Item {
       this.quality += 2;
     } else if (this.sellIn > 0) {
       this.quality += 3;
+    } else {
+      this.quality = 0;
     }
 
     this.sellIn -= 1;
