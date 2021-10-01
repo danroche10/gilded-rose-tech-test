@@ -1,3 +1,5 @@
+const BrieItem = require('./BrieItem');
+
 class Shop {
   constructor(items = []) {
     this.items = items;
@@ -14,11 +16,16 @@ class Shop {
           }
         }
       } else {
+        // aged Brie and Backstage passes
         if (this.items[i].quality < 50) {
-          this.items[i].quality = this.items[i].quality + 1;
+          // quality of Brie always goes up by 1 until 50
+          console.log('line 7', this.items[i]);
+          this.items[i].updateItem();
+          console.log('line 24', this.items[i]);
           if (
             this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert'
           ) {
+            // logic for increasing value of backstage pass value
             if (this.items[i].sellIn < 11) {
               if (this.items[i].quality < 50) {
                 this.items[i].quality = this.items[i].quality + 1;
@@ -33,6 +40,7 @@ class Shop {
         }
       }
       if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
+        // Sulfuras never have to be sold so this only updates sellIn for the other two
         this.items[i].sellIn = this.items[i].sellIn - 1;
       }
       if (this.items[i].sellIn < 0) {
@@ -51,6 +59,7 @@ class Shop {
           }
         } else {
           if (this.items[i].quality < 50) {
+            // aged brie quality increase
             this.items[i].quality = this.items[i].quality + 1;
           }
         }
@@ -62,8 +71,9 @@ class Shop {
 }
 module.exports = Shop;
 
-// let item;
-// let shop;
+let item;
+let shop;
 
-// item = new Item('Aged Brie', 10, 40);
-// shop = new shop();
+item = new BrieItem('Aged Brie', 10, 40);
+item.updateItem();
+console.log(item);
