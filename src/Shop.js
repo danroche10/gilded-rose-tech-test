@@ -6,6 +6,10 @@ class Shop {
   }
   updateQuality() {
     for (var i = 0; i < this.items.length; i++) {
+      if (this.items[i].name === 'Aged Brie') {
+        this.items[i].updateItem();
+      }
+
       if (
         this.items[i].name != 'Aged Brie' &&
         this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert'
@@ -20,7 +24,6 @@ class Shop {
         if (this.items[i].quality < 50) {
           // quality of Brie always goes up by 1 until 50
           console.log('line 7', this.items[i]);
-          this.items[i].updateItem();
           console.log('line 24', this.items[i]);
           if (
             this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert'
