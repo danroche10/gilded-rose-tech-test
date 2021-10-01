@@ -1,0 +1,29 @@
+const BackStagePass = require('../src/BackStagePass');
+
+fdescribe('BackStagePass', function () {
+  describe('#updateItem', function () {
+    it('should increase quality by 1 when 15 days left of sellIn', function () {
+      backStagePass = new BackStagePass('BackStagePass', 15, 5);
+
+      expect(backStagePass.updateItem()).toEqual(
+        jasmine.objectContaining({
+          name: 'BackStagePass',
+          sellIn: 14,
+          quality: 6,
+        })
+      );
+    });
+
+    it('should increase quality by 2 when 9 days left of sellIn', function () {
+      backStagePass = new BackStagePass('BackStagePass', 9, 5);
+
+      expect(backStagePass.updateItem()).toEqual(
+        jasmine.objectContaining({
+          name: 'BackStagePass',
+          sellIn: 8,
+          quality: 7,
+        })
+      );
+    });
+  });
+});
