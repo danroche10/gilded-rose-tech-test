@@ -25,5 +25,17 @@ fdescribe('BackStagePass', function () {
         })
       );
     });
+
+    it('should increase quality by 3 when 4 days left of sellIn', function () {
+      backStagePass = new BackStagePass('BackStagePass', 4, 5);
+
+      expect(backStagePass.updateItem()).toEqual(
+        jasmine.objectContaining({
+          name: 'BackStagePass',
+          sellIn: 3,
+          quality: 8,
+        })
+      );
+    });
   });
 });
