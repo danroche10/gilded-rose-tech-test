@@ -13,5 +13,17 @@ fdescribe('StandardItem', function () {
         })
       );
     });
+
+    it('quality should not reduce below 0', function () {
+      newStandardItem = new StandardItem('Pears', 8, 0);
+
+      expect(newStandardItem.updateItem()).toEqual(
+        jasmine.objectContaining({
+          name: 'Pears',
+          sellIn: 7,
+          quality: 0,
+        })
+      );
+    });
   });
 });
