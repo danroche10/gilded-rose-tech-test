@@ -1,4 +1,6 @@
-const { Shop, Item } = require('../src/GildedRose.js');
+const Shop = require('../src/UpdateQuality.js');
+const Item = require('../src/Item.js');
+
 describe('Gilded Rose', function () {
   it('should foo', function () {
     const gildedRose = new Shop([new Item('foo', 2, 2)]);
