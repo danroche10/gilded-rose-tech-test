@@ -1,6 +1,6 @@
 const BackStagePass = require('../src/BackStagePass');
 
-fdescribe('BackStagePass', function () {
+describe('BackStagePass', function () {
   describe('#updateItem', function () {
     it('should increase quality by 1 when 15 days left of sellIn', function () {
       backStagePass = new BackStagePass('BackStagePass', 15, 5);
