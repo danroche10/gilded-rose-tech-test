@@ -2,6 +2,12 @@ const Item = require('./Item');
 
 class BackStagePass extends Item {
   updateItem() {
+    this.sellIn -= 1;
+    this._updateQuality();
+    return this;
+  }
+
+  _updateQuality() {
     if (this.sellIn > 10) {
       this.quality += 1;
     } else if (this.sellIn > 5) {
@@ -11,9 +17,6 @@ class BackStagePass extends Item {
     } else {
       this.quality = 0;
     }
-
-    this.sellIn -= 1;
-    return this;
   }
 }
 

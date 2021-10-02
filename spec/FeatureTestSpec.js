@@ -1,4 +1,4 @@
-fdescribe('FeatureTest', function () {
+describe('FeatureTest', function () {
   const Brie = require('../src/BrieItem');
   const BackStagePass = require('../src/BackStagePass');
   const StandardItem = require('../src/StandardItem');
