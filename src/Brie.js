@@ -1,6 +1,6 @@
 const Item = require('./Item');
 
-class BrieItem extends Item {
+class Brie extends Item {
   updateItem() {
     this.sellIn -= 1;
     this._updateQuality();
@@ -14,4 +14,4 @@ class BrieItem extends Item {
   }
 }
 
-module.exports = BrieItem;
+module.exports = Brie;

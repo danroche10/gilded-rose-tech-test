@@ -1,11 +1,11 @@
-const BrieItem = require('../src/BrieItem.js');
+const Brie = require('../src/Brie.js');
 
-describe('BrieItem', function () {
+describe('Brie', function () {
   describe('#updateItem', function () {
     it('should increase quality by 1 if quality is less than 50', function () {
-      newBrieItem = new BrieItem('Aged Brie', 8, 5);
+      brie = new Brie('Aged Brie', 8, 5);
 
-      expect(newBrieItem.updateItem()).toEqual(
+      expect(brie.updateItem()).toEqual(
         jasmine.objectContaining({
           name: 'Aged Brie',
           sellIn: 7,
@@ -15,9 +15,9 @@ describe('BrieItem', function () {
     });
 
     it('should not change quality if quality is 50', function () {
-      newBrieItem = new BrieItem('Aged Brie', 8, 50);
+      brie = new Brie('Aged Brie', 8, 50);
 
-      expect(newBrieItem.updateItem()).toEqual(
+      expect(brie.updateItem()).toEqual(
         jasmine.objectContaining({
           name: 'Aged Brie',
           sellIn: 7,

@@ -1,11 +1,11 @@
 describe('FeatureTest', function () {
-  const Brie = require('../src/BrieItem');
+  const Brie = require('../src/Brie');
   const BackStagePass = require('../src/BackStagePass');
   const StandardItem = require('../src/StandardItem');
   const Sulfura = require('../src/Sulfura');
   const Shop = require('../src/Shop');
 
-  let brieItem;
+  let brie;
   let backStagePass;
   let standardItem;
   let sulfura;
@@ -14,17 +14,17 @@ describe('FeatureTest', function () {
 
   describe('one of each item', function () {
     beforeEach(function () {
-      brieItem = new Brie('Aged Brie', 10, 10);
+      brie = new Brie('Aged Brie', 10, 10);
       backStagePass = new BackStagePass('Music Concert', 10, 10);
       standardItem = new StandardItem('Pears', 10, 10);
       sulfura = new Sulfura('sulfura', 'n/a', 10);
-      items = [brieItem, backStagePass, standardItem, sulfura];
+      items = [brie, backStagePass, standardItem, sulfura];
       gildedRose = new Shop(items);
     });
 
     it('returns items with correct sellIn and quality after being called once', function () {
       gildedRose.updateStock();
-      expect(brieItem).toEqual(
+      expect(brie).toEqual(
         jasmine.objectContaining({
           sellIn: 9,
           quality: 11,
@@ -53,7 +53,7 @@ describe('FeatureTest', function () {
     it('returns items with correct sellIn and quality after being called twice', function () {
       gildedRose.updateStock();
       gildedRose.updateStock();
-      expect(brieItem).toEqual(
+      expect(brie).toEqual(
         jasmine.objectContaining({
           sellIn: 8,
           quality: 12,
