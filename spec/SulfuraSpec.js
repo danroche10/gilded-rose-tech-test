@@ -1,6 +1,6 @@
 const Sulfura = require('../src/Sulfura.js');
 
-fdescribe('Sulfura', function () {
+describe('Sulfura', function () {
   describe('#updateItem', function () {
     it('selIn days and quality shhould not reduce', function () {
       sulfuraItem = new Sulfura('Sulfura', 'n/a', 5);
