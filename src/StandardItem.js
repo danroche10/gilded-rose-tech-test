@@ -2,9 +2,13 @@ const Item = require('./Item');
 
 class StandardItem extends Item {
   updateItem() {
-    this.sellIn -= 1;
-    this._updateQuality();
-    return this;
+    if (this.quality < 0) {
+      throw new Error('Item cannot have negative quality');
+    } else {
+      this.sellIn -= 1;
+      this._updateQuality();
+      return this;
+    }
   }
   _updateQuality() {
     if (this.quality > 0) {

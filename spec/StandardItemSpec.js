@@ -37,5 +37,13 @@ describe('StandardItem', function () {
         })
       );
     });
+
+    it('should throw error if negative quality has been inputted', function () {
+      newStandardItem = new StandardItem('Pears', 10, -4);
+
+      expect(function () {
+        newStandardItem.updateItem();
+      }).toThrow(new Error('Item cannot have negative quality'));
+    });
   });
 });
