@@ -1,6 +1,6 @@
-const Brie = require('../src/Brie.js');
-
 describe('Brie', function () {
+  const Brie = require('../src/Brie.js');
+  let brie;
   describe('#updateItem', function () {
     it('should increase quality by 1 if quality is less than 50', function () {
       brie = new Brie('Aged Brie', 8, 5);

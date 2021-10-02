@@ -1,6 +1,6 @@
-const ConjuredItem = require('../src/ConjuredItem.js');
-
 describe('ConjuredItem', function () {
+  const ConjuredItem = require('../src/ConjuredItem.js');
+  let conjuredItem;
   describe('#updateItem', function () {
     it('selIn days and quality should reduce by twice that of normal item', function () {
       conjuredItem = new ConjuredItem('Conjured Item', 10, 10);
