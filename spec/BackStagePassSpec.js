@@ -54,7 +54,7 @@ describe('BackStagePass', function () {
       backStagePass = new BackStagePass('Backstage pass', 10, -4);
 
       expect(function () {
-        sulfura.updateItem();
+        backStagePass.updateItem();
       }).toThrow(new Error('Item cannot have negative quality'));
     });
   });

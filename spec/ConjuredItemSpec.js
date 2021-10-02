@@ -13,5 +13,13 @@ describe('ConjuredItem', function () {
         })
       );
     });
+
+    it('should throw error if negative quality has been inputted', function () {
+      conjuredItem = new ConjuredItem('Conjured Item', 10, -4);
+
+      expect(function () {
+        conjuredItem.updateItem();
+      }).toThrow(new Error('Item cannot have negative quality'));
+    });
   });
 });

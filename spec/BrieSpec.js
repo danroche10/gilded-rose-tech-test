@@ -25,5 +25,12 @@ describe('Brie', function () {
         })
       );
     });
+    it('should throw error if negative quality has been inputted', function () {
+      brie = new Brie('Brie', 10, -4);
+
+      expect(function () {
+        brie.updateItem();
+      }).toThrow(new Error('Item cannot have negative quality'));
+    });
   });
 });
