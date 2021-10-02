@@ -1,6 +1,6 @@
 const StandardItem = require('../src/StandardItem.js');
 
-fdescribe('StandardItem', function () {
+describe('StandardItem', function () {
   describe('#updateItem', function () {
     it('should reduce quality by 1', function () {
       newStandardItem = new StandardItem('Pears', 8, 5);
