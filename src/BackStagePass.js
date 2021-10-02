@@ -2,6 +2,9 @@ const Item = require('./Item');
 
 class BackStagePass extends Item {
   updateItem() {
+    if (this.quality < 0) {
+      throw new Error('Item cannot have negative quality');
+    }
     this.sellIn -= 1;
     this._updateQuality();
     return this;

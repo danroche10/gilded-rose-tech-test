@@ -13,5 +13,12 @@ describe('Sulfura', function () {
         })
       );
     });
+    it('should throw error if negative quality has been inputted', function () {
+      sulfura = new Sulfura('Sulfura', 10, -4);
+
+      expect(function () {
+        sulfura.updateItem();
+      }).toThrow(new Error('Item cannot have negative quality'));
+    });
   });
 });
