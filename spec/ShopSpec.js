@@ -6,7 +6,7 @@ describe('Shop', function () {
   beforeEach(function () {
     item = jasmine.createSpyObj('item', ['updateItem']);
     gildedRose = new Shop([item]);
-    gildedRose.updateQuality();
+    gildedRose.updateStock();
   });
 
   it('should call updateItem method in Item class', function () {

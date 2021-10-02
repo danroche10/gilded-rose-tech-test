@@ -2,7 +2,7 @@ class Shop {
   constructor(items = []) {
     this.items = items;
   }
-  updateQuality() {
+  updateStock() {
     for (let i = 0; i < this.items.length; i++) {
       this.items[i].updateItem();
     }
